@@ -1,7 +1,7 @@
 {
-  "rom_url": "https://bigota.d.miui.com/21.1.14/miui-blockota-raphael-21.1.12-21.1.14-ed8af2dd7a-11.0.zip",
-  "rom_name": "xiaomi.eu_multi_HMNote7_20.10.22_v12-10.zip",
-  "pack_sgsi": "HMNote7_20.10.22_Q-eu_XiaoxinSGSIs_Pinkdoge.7z",
+  "rom_url": "http://bigota.d.miui.com/21.1.14/miui_RAPHAEL_21.1.14_979131bba9_11.0.zip",
+  "rom_name": "miui_RAPHAEL_21.1.24_979131bba9_11.0.zip",
+  "pack_sgsi": "K20P_21.1.14_R_XiaoxinSGSIs.7z",
   "make_miui": true,
   "make_flyme": false,
   "make_coloros": false,
