@@ -46,20 +46,20 @@ jobs:
          uses: robinraju/release-downloader@v1
          with: 
            repository: "xiaoxindada/SGSI-build-tool"
-           tag: "v11-1.7"
-           fileName: "SGSI-build-tool-11.tar"
+           tag: "v2.2"
+           fileName: "SGSI-build-tool-10.tar"
            
        - name: Initialization environment
          run: |
-           sudo tar -xf SGSI-build-tool-11.tar
-           sudo rm -rf SGSI-build-tool-11/setup.sh
-           sudo mv bin/setup.sh SGSI-build-tool-11/
-           sudo rm -rf SGSI-build-tool-11/11/make.sh
-           sudo mv bin/make.sh SGSI-build-tool-11/11/
-           sudo rm -rf SGSI-build-tool-11/11/SGSI.sh
+           sudo tar -xf SGSI-build-tool-10.tar
+           sudo rm -rf SGSI-build-tool-10/setup.sh
+           sudo mv bin/setup.sh SGSI-build-tool-10/
+           sudo rm -rf SGSI-build-tool-10/10/make.sh
+           sudo mv bin/make.sh SGSI-build-tool-10/10/
+           sudo rm -rf SGSI-build-tool-10/10/SGSI.sh
            sudo mv bin/SGSI.sh SGSI-build-tool-11/11/
-           sudo rm -rf SGSI-build-tool-11/11/fixbug/fixbug.sh
-           sudo mv bin/fixbug.sh SGSI-build-tool-11/11/fixbug/
+           sudo rm -rf SGSI-build-tool-10/10/fixbug/fixbug.sh
+           sudo mv bin/fixbug.sh SGSI-build-tool-10/10/fixbug/
            sudo rm -rf SGSI-build-tool-11/11/makeimg.sh
            sudo mv bin/makeimg.sh SGSI-build-tool-11/11/
            sudo chmod 777 -R SGSI-build-tool-11/
