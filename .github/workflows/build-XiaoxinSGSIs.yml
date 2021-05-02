@@ -42,20 +42,32 @@ jobs:
            echo "::set-output name=upload_artifact::$(jq -r '.upload_artifact' sgsi.json)"
          id: var
            
-       - name: Download XiaoxinSGSIs Tools
+       - name: Download SGSI-build-tool
          uses: robinraju/release-downloader@v1
-         with:
+         with: 
            repository: "xiaoxindada/SGSI-build-tool"
-           latest: true
-           fileName: "SGSI-build-tool.tar"
+           tag: "v11-1.7"
+           fileName: "SGSI-build-tool-11.tar"
            
        - name: Initialization environment
          run: |
-           sudo tar -xf SGSI-build-tool.tar
-           sudo rm -rf SGSI-build-tool/10/setup.sh
-           sudo mv bin/setup.sh SGSI-build-tool/10/
-           cd SGSI-build-tool/10
-           sudo bash setup.sh
+           sudo tar -xf SGSI-build-tool-11.tar
+           sudo rm -rf SGSI-build-tool-11/setup.sh
+           sudo mv bin/setup.sh SGSI-build-tool-11/
+           sudo rm -rf SGSI-build-tool-11/11/make.sh
+           sudo mv bin/make.sh SGSI-build-tool-11/11/
+           sudo rm -rf SGSI-build-tool-11/11/SGSI.sh
+           sudo mv bin/SGSI.sh SGSI-build-tool-11/11/
+           sudo rm -rf SGSI-build-tool-11/11/fixbug/fixbug.sh
+           sudo mv bin/fixbug.sh SGSI-build-tool-11/11/fixbug/
+           sudo rm -rf SGSI-build-tool-11/11/makeimg.sh
+           sudo mv bin/makeimg.sh SGSI-build-tool-11/11/
+           sudo chmod 777 -R SGSI-build-tool-11/
+           sudo apt-get -y purge "openjdk*"
+           sudo bash SGSI-build-tool-11/11/setup.sh
+           #dpkg -l | grep "openjdk*"
+           sudo apt-get -y --purge remove "adoptopenjdk-11-hotspot"
+           java -version
            
        - name: Download Rom
          run: sudo wget -c ${{ steps.var.outputs.rom_url }} -O SGSI-build-tool/10/tmp/${{ steps.var.outputs.rom_name }}
