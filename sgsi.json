@@ -2,13 +2,13 @@
   "rom_url": "https://coloroswebsitefs.coloros.com/coloroswebsite-coloros-com/grs_20210402154942/PCKM00_11_OTA_1220_all_gj0l3VLWSzn4.ozip",
   "rom_name": "update.zip",
   "pack_sgsi": "XiaoxinSGSIs.7z",
-  "make_miui": false,
+  "make_miui": true,
   "make_flyme": false,
-  "make_coloros": true,
+  "make_coloros": false,
   "make_h2os": false,
   "make_smartisanos": false,
   "make_zui": false,
   "make_super": false,
-  "upload_transfer": true,
-  "upload_artifact": false
+  "upload_transfer": false,
+  "upload_artifact": true
 }
